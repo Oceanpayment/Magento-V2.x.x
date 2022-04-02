@@ -11,10 +11,6 @@ Magento是一套专业开源的电子商务系统。Magento设计得非常灵活
 <h4>安装</h4>
 <ol>
     <li>将下载的文件覆盖到magento网站根目录。</li>
-     <ul>
-        <li>将下载的文件覆盖到magento网站根目录。把文件夹op_creditcard复制到网站正在使用的模板路径中，例如：app\design\frontend\网站正在使用的模板名\default\template\op_creditcard</li>
-         <li>文件夹images也需要复制到正在使用的模板路径中，例如：skin\frontend\正在使用的模板名\default\images</li>
-    </ul>
     <li>在网站根目录下运行 php bin/magento setup:upgrade，等待加载完成所有的模块。</li>
     <li>清除后台缓存System-&gt;Cache Management</li>
     <li>进入配置Stores-&gt; Configuration-&gt; Sales-&gt;Payment Methods</li>
