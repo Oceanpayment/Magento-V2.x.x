@@ -9,7 +9,7 @@
     <default>
         <payment>
             <oceanpaymentalipay>
-                <title>Oceanpayment Alipay</title>
+                <title>Alipay</title>
                 <model>Oceanpayment\Alipay\Model\PaymentMethod</model>
                 <active>0</active>
                 <new_order_status>pending</new_order_status>
