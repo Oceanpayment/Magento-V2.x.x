@@ -9,7 +9,7 @@
     <default>
         <payment>
             <oceanpaymentfps>
-                <title>Oceanpayment FPS</title>
+                <title>FPS</title>
                 <model>Oceanpayment\FPS\Model\PaymentMethod</model>
                 <active>0</active>
                 <new_order_status>pending</new_order_status>
