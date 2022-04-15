@@ -9,7 +9,7 @@
     <default>
         <payment>
             <oceanpaymentcreditcard>
-                <title>Oceanpayment Debit/Credit Card</title>
+                <title>Debit/Credit Card</title>
                 <model>Oceanpayment\Creditcard\Model\PaymentMethod</model>
                 <active>0</active>
                 <new_order_status>pending</new_order_status>
