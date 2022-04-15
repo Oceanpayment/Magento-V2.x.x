@@ -187,7 +187,7 @@ class PaymentMethod extends AbstractMethod
         //收货人邮编
         $ship_zip          = $shipping->getPostcode();
         //产品名称
-        $productName       = $productDetails['productName'];
+        $productName       = substr($productDetails['productName'],0,256);
         //产品SKU
         $productSku        = $productDetails['productSku'];
         //产品数量
