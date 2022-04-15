@@ -9,7 +9,7 @@
     <default>
         <payment>
             <oceanpaymentwechat>
-                <title>Oceanpayment Wechat Pay</title>
+                <title>Wechat Pay</title>
                 <model>Oceanpayment\Wechat\Model\PaymentMethod</model>
                 <active>0</active>
                 <new_order_status>pending</new_order_status>
