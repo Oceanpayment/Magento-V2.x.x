@@ -9,7 +9,7 @@
     <default>
         <payment>
             <oceanpaymentalipayhk>
-                <title>Oceanpayment AlipayHK</title>
+                <title>AlipayHK</title>
                 <model>Oceanpayment\AlipayHK\Model\PaymentMethod</model>
                 <active>0</active>
                 <new_order_status>pending</new_order_status>
