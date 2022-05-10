@@ -105,9 +105,9 @@ class Back extends \Magento\Framework\App\Action\Action implements CsrfAwareActi
                 // $this->orderSender->send($order);
                 
                 //自动Invoice
-                if ($model->getConfigData('invoice')){
-                    $this->_createInvoice($order);
-                }
+                // if ($model->getConfigData('invoice')){
+                //     $this->_createInvoice($order);
+                // }
 
                 $order->save();
 
