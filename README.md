@@ -1,17 +1,74 @@
-<h2>概述</h4>
-Oceanpayment支持主流的开源程序Magento，WordPress，Opencart，Prestashop，Zen Cart等支付插件，安装便捷，节约开发成本和资源。
-
-<h2>Magento支付插件</h2>
-<h4>介绍</h4>
-Magento是一套专业开源的电子商务系统。Magento设计得非常灵活，具有模块化架构体系和功能。易于与第3方应用系统无缝集成。其面向企业级应用，可处理各方面的需求，以及建设一个多种用途和适用面的电子商务网站。
+<h2>Overview</h4>
+Oceanpayment supports mainstream open-source payment plug-ins, such as Magento, WordPress, OpenCart, PrestaShop, and Zen Cart, which are easy to install and save development costs and resources. 
+<h2>Plug-in installation above 2.0.</h2>
+<h4>Introduce</h4>
+Magento is a professional open source e-commerce system. Magento is designed to be very flexible, with a modular architecture system and functions. It is easy to integrate seamlessly with third-party application systems. It is oriented to enterprise-level applications and can handle various needs and build a multi-purpose and applicable e-commerce website.
 <ul>
-  <li>信用卡支付和本地支付插件支持内嵌功能。</li>
-  <li>支持邮件发送</li>
+  <li>Supports Card Payments and Alternative Payments embedded plug-ins.</li>
+  <li>Support email sending.</li>
 </ul>
-<h4>安装</h4>
+<h4>Plug-in installation</h4>
 <ol>
-    <li>将下载的文件覆盖到magento网站根目录。</li>
-    <li>在网站根目录下运行 php bin/magento setup:upgrade，等待加载完成所有的模块。</li>
-    <li>清除后台缓存System-&gt;Cache Management</li>
-    <li>进入配置Stores-&gt; Configuration-&gt; Sales-&gt;Payment Methods</li>
+    <li>Overwrite the downloaded file to the root directory of the magento website.</li>
+    <li>Run php bin/magento setup:upgrade in the root directory of the website and wait for all modules to be loaded.</li>
+    <li>Clear the background cache System->Cache Management.</li>
+    <li>Go to Configuration Stores->Configuration->Sales->Payment Methods.</li>
 </ol>
+<table>
+  <tr>
+    <th>Configuration</th>
+    <th>Options/values</th>  
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Title</td>
+    <td>WeChatPay</td>
+  </tr> 
+  <tr>
+    <td>Account</td>
+    <td>Provide by Oceanpayment technical support.</td>
+  </tr>
+  <tr>
+    <td>Terminal</td>
+    <td>Provide by Oceanpayment technical support.</td>
+  </tr>
+  <tr>
+    <td>SecureCode</td>
+    <td>Provide by Oceanpayment technical support.</td>
+  </tr>
+  <tr>
+    <td>Gataway URL</td>
+    <td>Production environment：https://secure.oceanpayment.com/gateway/service/pay<br>Sandbox environment：https://test-secure.oceanpayment.com/gateway/service/pay</td>
+  </tr>
+  <tr>
+    <td>Pay Mode</td>
+    <td>Redirect:Redirect to open payment page<br>Iframe:iframe payment page.</td>
+  </tr>
+  <tr>
+    <td>New Order Status</td>
+    <td>On Hold</td>
+  </tr>
+  <tr>
+    <td>Approved Order Status</td>
+    <td>Processing</td>
+  </tr>
+  <tr>
+    <td>Failure Order Status</td>
+    <td>Canceled</td>
+  </tr>
+  <tr>
+    <td>Pending Order Status</td>
+    <td>Pending</td>
+  </tr>
+  <tr>
+    <td>Invoice When Complete</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Payment from Applicable Countries</td>
+    <td>All Allowed Countries</td>
+  </tr>
+</table>
