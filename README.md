@@ -41,7 +41,8 @@ Magento is a professional open source e-commerce system. Magento is designed to 
   </tr>
   <tr>
     <td>Gataway URL</td>
-    <td>Production environment：https://secure.oceanpayment.com/gateway/service/pay<br>Sandbox environment：https://test-secure.oceanpayment.com/gateway/service/pay</td>
+    <td>Production environment：https://secure.oceanpayment.com/gateway/service/pay<br>
+      Sandbox environment：https://test-secure.oceanpayment.com/gateway/service/pay</td>
   </tr>
   <tr>
     <td>Pay Mode</td>
