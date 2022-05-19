@@ -101,13 +101,13 @@ class Notice extends \Magento\Framework\App\Action\Action
             $_REQUEST['payment_country']  = (string)$xml->payment_country;
             $_REQUEST['payment_solutions']= (string)$xml->payment_solutions;
 
-
-            //交易推送类型
-            $this->returnLog(self::PUSH, $xml_str);
-
-
             //载入模块
-            $model = $this->_paymentMethod;      
+            $model = $this->_paymentMethod;
+
+            if($model->getConfigData('logs')) {
+                //交易推送类型
+                $this->returnLog(self::PUSH, $xml_str);
+            }
 
             $order = $this->_orderFactory->create()->loadByIncrementId($_REQUEST['order_number']);
 

@@ -19,6 +19,7 @@
                 <invoice>0</invoice>   
                 <sort_order>0</sort_order>
                 <allowspecific>0</allowspecific>
+                <logs>1</logs>
             </oceanpaymentalipayhk>
         </payment>
     </default>

@@ -84,11 +84,14 @@ class Back extends \Magento\Framework\App\Action\Action implements CsrfAwareActi
 
     public function execute()
     {
-        //交易推送类型
-        $this->returnLog(self::BrowserReturn, $_REQUEST);
-
         //载入模块
-        $model = $this->_paymentMethod;      
+        $model = $this->_paymentMethod;
+
+        if($model->getConfigData('logs')) {
+            //交易推送类型
+            $this->returnLog(self::BrowserReturn, $_REQUEST);
+        }
+
 
         $order = $this->_orderFactory->create()->loadByIncrementId($_REQUEST['order_number']);
 

@@ -65,6 +65,10 @@
                 <field id="sort_order" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Sort Order</label>
                 </field>
+                <field id="logs" translate="label" type="select" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Logs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
                 <include path="Oceanpayment_AlipayHK::system/secure_mode.xml"/>
             </group>    
         </section>
