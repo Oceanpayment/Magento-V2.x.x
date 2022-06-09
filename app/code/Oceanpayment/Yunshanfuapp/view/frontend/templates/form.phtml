@@ -1,0 +1,18 @@
+<?php
+/**
+ * Copyright © 2016 Oceanpayment Design. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/**
+ * @var $block \Oceanpayment\Yunshanfuapp\Block\Form
+ */
+?>
+<?php $methodCode = $block->escapeHtml($block->getMethodCode());?>
+<div class="items <?php /* @noEscape */ echo $methodCode ?> instructions agreement checkout-agreement-item-content" id="payment_form_<?php /* @noEscape */ echo $methodCode ?>" style="display: none;">
+    <?php /* @noEscape */ echo nl2br($block->escapeHtml($instructions)) ?>
+    <div style="padding:10px 15px 15px;">
+        <img src="<?php $block->escapeUrl($block->getViewFileUrl('Oceanpayment_Yunshanfuapp::icon_accepted_cards_yunshanfuapp.gif'));?>" alt="<?php echo __('Payment by visa or mastercard'); ?>"><br>
+    </div>
+</div>

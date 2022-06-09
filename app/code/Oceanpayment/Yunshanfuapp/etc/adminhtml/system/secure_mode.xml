@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="secure" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+        <label>3D Secure Mode</label>
+        <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+        <field id="secure_mode" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enabled</label>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="secure_terminal" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>3D Secure Terminal</label>
+            <can_be_empty>0</can_be_empty>
+        </field>
+        <field id="secure_securecode" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>3D Secure SecureCode</label>
+            <can_be_empty>0</can_be_empty>
+        </field>
+        <field id="secure_currency" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>3D Secure Currency</label>
+            <can_be_empty>0</can_be_empty>
+        </field>
+        <field id="secure_amount" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>3D Secure Amount</label>
+            <can_be_empty>0</can_be_empty>
+        </field>
+        <field id="secure_other_currency" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>Other Currency</label>
+            <source_model>Oceanpayment\Yunshanfuapp\Model\Source\OtherCurrency</source_model>
+        </field>
+        <field id="secure_country" translate="label" type="multiselect" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+            <label>3D Secure Countries</label>
+            <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+        </field>
+    </group>
+</include>

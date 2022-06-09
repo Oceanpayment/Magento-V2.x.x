@@ -1,0 +1,15 @@
+<?php
+/**
+ * Copyright © 2016 Oceanpayment Design. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/**
+ * @var $block \Oceanpayment\Yunshanfuapp\Block\Info
+ */
+?>
+<?php echo $this->escapeHtml($block->getMethod()->getTitle()) ?>
+    {{pdf_row_separator}}
+<?php echo __('YunShanFu_APP Transaction ID: %1', $this->escapeHtml($block->getInfo()->getLastTransId())) ?>
+    {{pdf_row_separator}}

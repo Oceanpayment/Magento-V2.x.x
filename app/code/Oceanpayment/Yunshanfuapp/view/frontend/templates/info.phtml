@@ -1,0 +1,17 @@
+<?php
+/**
+ * Copyright © 2016 Oceanpayment Design. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/**
+ * @var $block \Oceanpayment\Yunshanfuapp\Block\Info
+ */
+?>
+<dl class="payment-method oceanpaymentyunshanfuapp">
+    <dt class="title"><?php echo $block->escapeHtml($block->getMethod()->getTitle()) ?></dt>
+    <dd class="content">
+        <strong><?php echo $block->escapeHtml(__('You will be redirected to our secure payment page when you place an order.')) ?></strong>
+    </dd>
+</dl>
