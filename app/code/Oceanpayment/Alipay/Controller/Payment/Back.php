@@ -276,6 +276,16 @@ class Back extends \Magento\Framework\App\Action\Action implements CsrfAwareActi
         echo '<script type="text/javascript">parent.location.replace("'.$url.'");</script>';
     }
 
+    public function createCsrfValidationException(RequestInterface $request): ?InvalidRequestException 
+    {
+        return null;
+    }
+
+    public function validateForCsrf(RequestInterface $request): ?bool
+    {
+        return true;
+    }
+
 }
 
 
