@@ -152,9 +152,9 @@ class PaymentMethod extends AbstractMethod
         //备注
         $order_notes       = $orderIncrementId;
         //账单人名        
-        $billing_firstName = substr(urlencode($this->OceanHtmlSpecialChars($billing->getFirstname()),0,50);        
+        $billing_firstName = substr(urlencode($this->OceanHtmlSpecialChars($billing->getFirstname())),0,50);        
         //账单人姓
-        $billing_lastName  = substr(urlencode($this->OceanHtmlSpecialChars($billing->getLastname()),0,50);               
+        $billing_lastName  = substr(urlencode($this->OceanHtmlSpecialChars($billing->getLastname())),0,50);               
         //账单人email
         $billing_email     = $this->OceanHtmlSpecialChars($order->getCustomerEmail());
         //账单人电话
@@ -171,9 +171,9 @@ class PaymentMethod extends AbstractMethod
         $billing_zip       = $billing->getPostcode();       
         //收货人地址信息
         //收货人名
-        $ship_firstName    = substr(urlencode($this->OceanHtmlSpecialChars($shipping->getFirstname()),0,50);
+        $ship_firstName    = substr(urlencode($this->OceanHtmlSpecialChars($shipping->getFirstname())),0,50);
         //收货人姓
-        $ship_lastName     = substr(urlencode($this->OceanHtmlSpecialChars($shipping->getLastname()),0,50);
+        $ship_lastName     = substr(urlencode($this->OceanHtmlSpecialChars($shipping->getLastname())),0,50);
         //收货人手机
         $ship_phone        = $shipping->getTelephone();
         //收货人国家
