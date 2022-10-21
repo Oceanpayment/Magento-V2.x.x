@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <oceanpaymentsofort>
+                <title>Debit/Sofort</title>
+                <model>Oceanpayment\Sofort\Model\PaymentMethod</model>
+                <active>0</active>
+                <new_order_status>pending</new_order_status>
+                <success_order_status>processing</success_order_status>
+                <failure_order_status>canceled</failure_order_status>
+                <pre_auth_order_status>processing</pre_auth_order_status>
+                <invoice>0</invoice>   
+                <sort_order>0</sort_order>
+                <allowspecific>0</allowspecific>
+            </oceanpaymentsofort>
+        </payment>
+    </default>
+</config>
