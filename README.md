@@ -25,7 +25,7 @@ Magento is a professional open source e-commerce system. Magento is designed to 
   </tr>
   <tr>
     <td>Title</td>
-    <td>Credit Debit/Card</td>
+    <td>Sofort</td>
   </tr> 
   <tr>
     <td>Account</td>
