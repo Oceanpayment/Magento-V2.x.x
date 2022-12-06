@@ -155,7 +155,7 @@ class PaymentMethod extends AbstractMethod
         //securecode
         $securecode        = $validate_arr['securecode'];
         //支付方式
-        // $methods           = 'Klarna';
+         $methods           = 'Klarna';
         //订单号
         $order_number      = $orderIncrementId;  
         //返回地址
@@ -285,7 +285,7 @@ class PaymentMethod extends AbstractMethod
             'noticeUrl'=>$noticeUrl,
             'order_notes'=>$order_notes,
             'itemList'=>$itemList,
-            // 'methods'=>$methods,
+             'methods'=>$methods,
             'signValue'=>$signValue,
             'billing_firstName'=>$billing_firstName,
             'billing_lastName'=>$billing_lastName,

@@ -68,17 +68,7 @@ class Redirect extends \Magento\Framework\View\Element\Template
     }
 
     public function getPayMode(){
-
-        $parameter = $this->_paymentMethod->getCheckoutParameter();
-        $billing_country = $parameter['billing_country'];
-        $pay_mode = $this->_paymentMethod->getConfigData('pay_mode');
-        if($pay_mode == 'redirect' || in_array($billing_country,array('BE','FR','IT','ES','CH'))){
-            return 'redirect';
-        }else{
-            return 'iframe';
-        }
-
-//        return $this->_paymentMethod->getConfigData('pay_mode');
+        return $this->_paymentMethod->getConfigData('pay_mode');
 
     }
 
