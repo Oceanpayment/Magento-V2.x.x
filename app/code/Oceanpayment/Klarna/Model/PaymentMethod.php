@@ -90,7 +90,19 @@ class PaymentMethod extends AbstractMethod
     {
         return $this->getConfigData('gateway_url');
     }
+    /**
+     *  billing country
+     *
+     *  @return   string billing country
+     */
+    public function getBillingCountry()
+    {
+        $orderIncrementId = $this->checkoutSession->getLastRealOrderId();
+        $order = $this->_orderFactory->create()->loadByIncrementId($orderIncrementId);
 
+        $billing = $order->getBillingAddress();
+        return $billing->getCountryId();
+    }
 
     public function canUseForCurrency($currencyCode)
     {
