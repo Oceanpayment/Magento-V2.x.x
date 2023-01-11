@@ -234,8 +234,8 @@ class PaymentMethod extends AbstractMethod
         $itemList = '{
             "0": {
             "type": "1",
-            "title": "'.substr($productName,0,100).'",
-            "sku": "'.substr($productSku,0,100).'",
+            "title": "'.substr(str_replace(array("'",'"'),array("",""),$productName), 0,100).'",
+            "sku": "'.substr(str_replace(array("'",'"'),array("",""),$productSku), 0,100).'",
             "price": "'.($order_amount-$order->getTaxAmount()-$order->getShippingAmount()).'",
             "quantity": "1",
             "total_amount": "'.($order_amount-$order->getTaxAmount()-$order->getShippingAmount()).'",
@@ -248,7 +248,7 @@ class PaymentMethod extends AbstractMethod
             "1": {
             "type": "3",
             "title": "折扣",
-            "sku": "'.substr($productSku,0,100).'",
+            "sku": "'.substr(str_replace(array("'",'"'),array("",""),$productSku), 0,100).'",
             "price": "0",
             "quantity": "0",
             "total_amount": "0",
@@ -261,7 +261,7 @@ class PaymentMethod extends AbstractMethod
             "2": {
             "type": "4",
             "title": "运费",
-            "sku": "'.substr($productSku,0,100).'",
+            "sku": "'.substr(str_replace(array("'",'"'),array("",""),$productSku), 0,100).'",
             "price": "'.round($order->getShippingAmount(),2).'",
             "quantity": "1",
             "total_amount": "'.round($order->getShippingAmount(),2).'",
@@ -274,7 +274,7 @@ class PaymentMethod extends AbstractMethod
             "3": {
             "type": "5",
             "title": "税费",
-            "sku": "'.substr($productSku,0,100).'",
+            "sku": "'.substr(str_replace(array("'",'"'),array("",""),$productSku), 0,100).'",
             "price": "'.round($order->getTaxAmount(),2).'",
             "quantity": "1",
             "total_amount": "'.round($order->getTaxAmount(),2).'",
