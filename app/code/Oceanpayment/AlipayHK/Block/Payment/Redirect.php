@@ -70,4 +70,8 @@ class Redirect extends \Magento\Framework\View\Element\Template
 
     }
 
+    public function getIsMobile(){
+        return $this->_paymentMethod->isMobile();
+    }
+
 }
