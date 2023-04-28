@@ -108,6 +108,7 @@ class Back extends \Magento\Framework\App\Action\Action implements CsrfAwareActi
 
                 $order->save();
 
+                $this->checkoutSession->getQuote();
                 $this->orderSender->send($order);
                 $url = 'checkout/onepage/success';
                 break;
