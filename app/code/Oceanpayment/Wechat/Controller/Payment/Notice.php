@@ -145,11 +145,7 @@ class Notice extends \Magento\Framework\App\Action\Action
                     $order->save();
                     break;
                 case 2:
-                    //在网站中已经是支付成功
-                    $order->setState($model->getConfigData('success_order_status'));
-                    $order->setStatus($model->getConfigData('success_order_status'));
-                    $order->addStatusToHistory($model->getConfigData('success_order_status'), __(self::PUSH.'Payment Success!'.$history));
-                    $order->save();
+                    //订单状态已变更后的推送
                     break;
                 case '20061':
                     //订单号重复
@@ -229,25 +225,31 @@ class Notice extends \Magento\Framework\App\Action\Action
 
         //加密校验
         if(strtoupper($local_signValue) == strtoupper($back_signValue)){
-
-            //在网站中已经是支付成功
-            if(in_array($order->getState(), $this->_processingArray)){
-                return 2;
-            }
             
             //支付状态
             if ($payment_status == 1) {
                 return 1;
             } elseif ($payment_status == -1) {
-                return -1;
-            } elseif ($payment_status == 0) {
-
-                //是否点击浏览器后退造成订单号重复 20061
-                if($getErrorCode[0] == '20061'){
-                    return '20061';
+                //在网站中已经是支付成功
+                if(in_array($order->getState(), $this->_processingArray)){
+                    return 2;
+                }else{
+                    return -1;
                 }
+                
+            } elseif ($payment_status == 0) {
+                //在网站中已经是支付成功
+                if(in_array($order->getState(), $this->_processingArray)){
+                    return 2;
+                }else{
+                    //是否点击浏览器后退造成订单号重复 20061
+                    if($getErrorCode[0] == '20061'){
+                        return '20061';
+                    }
 
-                return 0;
+                    return 0;
+                }
+                
             }
         }else{
             return 999;
