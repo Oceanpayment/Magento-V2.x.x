@@ -242,14 +242,11 @@ class Back extends \Magento\Framework\App\Action\Action implements CsrfAwareActi
             if ($payment_status == 1) {
                 return 1;
             } elseif ($payment_status == -1) {
-                //是否是预授权交易
-                if($payment_authType == 1){
-                    //在网站中已经是支付成功
-                    if(in_array($order->getState(), $this->_processingArray)){
-                        return 2;
-                    }else{
-                        return -1;
-                    }
+                //在网站中已经是支付成功
+                if(in_array($order->getState(), $this->_processingArray)){
+                    return 2;
+                }else{
+                    return -1;
                 }
                 
             } elseif ($payment_status == 0) {
