@@ -155,11 +155,7 @@ class Notice extends \Magento\Framework\App\Action\Action
                     $order->save();
                     break;
                 case 2:
-                    //在网站中已经是支付成功
-                    $order->setState($model->getConfigData('success_order_status'));
-                    $order->setStatus($model->getConfigData('success_order_status'));
-                    $order->addStatusToHistory($model->getConfigData('success_order_status'), __(self::PUSH.'Payment Success!'.$history));
-                    $order->save();
+                    //订单状态变更后的二次推送
                     break;
                 case '10000':
                     //10000:Payment is declined 高风险订单
