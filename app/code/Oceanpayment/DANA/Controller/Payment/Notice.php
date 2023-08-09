@@ -155,11 +155,7 @@ class Notice extends \Magento\Framework\App\Action\Action
                     $order->save();
                     break;
                 case 2:
-                    //在网站中已经是支付成功
-                    $order->setState($model->getConfigData('success_order_status'));
-                    $order->setStatus($model->getConfigData('success_order_status'));
-                    $order->addStatusToHistory($model->getConfigData('success_order_status'), __(self::PUSH.'Payment Success!'.$history));
-                    $order->save();
+                    //订单更换状态后的二次推送
                     break;
                 case '10000':
                     //10000:Payment is declined 高风险订单
@@ -252,32 +248,35 @@ class Notice extends \Magento\Framework\App\Action\Action
 
         //加密校验
         if(strtoupper($local_signValue) == strtoupper($back_signValue)){
-            
-            //是否是预授权交易
-            if($payment_authType == 0){
-                //在网站中已经是支付成功
-                if(in_array($order->getState(), $this->_processingArray)){
-                    return 1;
-                }
-            }
-
+                
             //支付状态
             if ($payment_status == 1) {
                 return 1;
             } elseif ($payment_status == -1) {
-                return -1;
+                //在网站中已经是支付成功
+                if(in_array($order->getState(), $this->_processingArray)){
+                    return 2;
+                }else{
+                    return -1;
+                }
+
             } elseif ($payment_status == 0) {
-
-                //10000:Payment is declined 高风险订单
-                if($getErrorCode[0] == '10000'){
-                    return '10000';
+                //在网站中已经是支付成功
+                if(in_array($order->getState(), $this->_processingArray)){
+                    return 2;
+                }else{
+                    //10000:Payment is declined 高风险订单
+                    if($getErrorCode[0] == '10000'){
+                        return '10000';
+                    }
+                    //是否点击浏览器后退造成订单号重复 20061
+                    if($getErrorCode[0] == '20061'){
+                        return '20061';
+                    }
+    
+                    return 0;
                 }
-                //是否点击浏览器后退造成订单号重复 20061
-                if($getErrorCode[0] == '20061'){
-                    return '20061';
-                }
-
-                return 0;
+                
             }
         }else{
             return 999;
