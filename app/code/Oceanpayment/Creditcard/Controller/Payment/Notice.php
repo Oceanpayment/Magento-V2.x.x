@@ -56,7 +56,7 @@ class Notice extends \Magento\Framework\App\Action\Action
     }
 
 
-    protected function _createInvoice($order)
+    protected function _createInvoice($order,$payment_id)
     {
         if (!$order->canInvoice()) {
             return;
@@ -66,6 +66,7 @@ class Notice extends \Magento\Framework\App\Action\Action
         if (!$invoice->getTotalQty()) {
             throw new \RuntimeException("Cannot create an invoice without products.");
         }
+        $invoice->setTransactionId($payment_id);
 
         $invoice->setRequestedCaptureCase(\Magento\Sales\Model\Order\Invoice::CAPTURE_OFFLINE);
         $invoice->register();
@@ -135,7 +136,7 @@ class Notice extends \Magento\Framework\App\Action\Action
                     
                     //自动Invoice
                     if ($model->getConfigData('invoice')){
-                        $this->_createInvoice($order);
+                        $this->_createInvoice($order,$_REQUEST['payment_id']);
                     }
 
                     $order->save();

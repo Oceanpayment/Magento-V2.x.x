@@ -100,7 +100,10 @@ class Back extends \Magento\Framework\App\Action\Action implements CsrfAwareActi
                 $order->setState($model->getConfigData('success_order_status'));
                 $order->setStatus($model->getConfigData('success_order_status'));
                 $order->addStatusToHistory($model->getConfigData('success_order_status'), __(self::BrowserReturn.'Payment Success!'.$history));
-                
+
+                $payment = $order->getPayment();
+                $payment->setCcTransId($_REQUEST['payment_id']);
+                $payment->setLastTransId($_REQUEST['payment_id'])->setIsTransactionClosed(0);
                 //发送邮件
                 // $this->orderSender->send($order);
                 
